@@ -1,0 +1,24 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "Server for DISCORE app.",
+  "main": "index.js",
+  "scripts": {
+  "test": "ng test",
+  "start": "ng serve --proxy-config proxy.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "\u001b[A\u001b[B\u001b[B\u0016https://gitlab.liu.se/gusan112/tddd27"
+  },
+  "keywords": [
+    "disc",
+    "golf"
+  ],
+  "author": "Gustaf Wallström",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "mongoose": "^5.9.9"
+  }
+}
