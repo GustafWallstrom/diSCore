@@ -1,21 +1,27 @@
-# TDDD27_2020_DISCORE
+# Client
 
-Author:
-Name - Gustaf Wallström
-Liuid - gusan112
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.9.
 
-Functional Description: 
+## Development server
 
-This is a project in the course TDDD27 - Advanced Web Programming. It is a web application for keeping track of your score when playing disc golf.
-Basics:
-- You are able to create a user to save your scores (number of total strokes and the difference from the course´s par). 
-- Users can look at other users scores.
-- When playing you can either choose a pre-added course or add a new one (keeps track of par and number of holes).
-Extendend goals if there´s time:
-- You can add another user while playing to add a match for them aswell.
-- Graphs to see the progression of your games.
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-Technical Description:
+## Code scaffolding
 
-- Angular is used for front-end, client side.
-- Mongo DB is used for back-end, server side.
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+
+## Build
+
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+
+## Running unit tests
+
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+
+## Running end-to-end tests
+
+Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+
+## Further help
+
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
