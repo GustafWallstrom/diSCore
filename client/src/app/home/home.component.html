@@ -1,24 +1,33 @@
-<header class="header clearfix">
-        <nav>
-          <ul class="nav nav-pills float-right">
+  <header class="header clearfix">
+    <nav>
+        <ul class="nav nav-pills float-right">
             <li class="nav-item">
-              <a class="nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+                <button type="button" class="btn btn-primary">
+                  Home
+                </button>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Add</a>
+                <button type="button" class="btn btn-link" data-toggle="modal" data-target="#exampleModal">
+                  Add
+                </button>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Logout</a>
+                 <button type="button" class="btn btn-link">
+                  Logout
+                </button>
             </li>
-          </ul>
-        </nav>
-        <h3 class="text-muted">diSCore App</h3>
-      </header>
+        </ul>
+    </nav>
+    <h3 class="text-muted">diSCore App</h3>
+</header>
 
-      <main role="main">
-        <app-show-post></app-show-post>
-      </main>
+<main role="main">
+   
+    <app-show-post></app-show-post>
+    <app-add-post (postAdded)="handlePostAdded()"></app-add-post>
+    
+</main>
 
-      <footer class="footer">
-        <p>&copy; Author: Gustaf Wallström 2020, a project in the course TDDD27 - Advanced Web Programming</p>
-      </footer>
+<footer class="footer">
+    <p>&copy; Author: Gustaf Wallström 2020, a project in the course TDDD27 - Advanced Web Programming</p>
+</footer>
