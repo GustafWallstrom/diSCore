@@ -20,6 +20,7 @@ export class LoginComponent {
   validateLogin() {
   	if(this.user.username && this.user.password) {
   		this.loginService.validateLogin(this.user).subscribe(result => {
+        console.log('result is ', result);
         if(result['status'] === 'success') {
           this.router.navigate(['/home']);
         } else {

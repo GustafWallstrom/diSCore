@@ -8,25 +8,25 @@
             </button>
             </div>
             <div class="modal-body">
- 
- 
+
+
                 <form>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Title</label>
-                        <input name="title" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter title">
+                        <input name="title" type="text" [(ngModel)]="post.title" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter title">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Description</label>
-                        <textarea name="description" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                        <textarea name="description" [(ngModel)]="post.description" class="form-control" id="exampleInputPassword1" placeholder="Password">
                         </textarea>
                     </div>
- 
-                    
- 
-                    <button type="button" class="btn btn-primary">Add</button>
+
+                   
+
+                    <button (click)="addPost()" type="button" class="btn btn-primary">Add</button>
                 </form>
- 
- 
+
+
             </div>
         </div>
     </div>
