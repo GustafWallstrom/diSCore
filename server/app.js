@@ -45,7 +45,8 @@ app.post('/api/user/create', (req, res) => {
 		const user = new User({
 			name: req.body.name,
 			username: req.body.username,
-			password: req.body.password
+			password: req.body.password,
+			date: req.body.date
 		})
 		user.save((err, res) => {
 			if (err) throw err;
@@ -65,7 +66,8 @@ app.post('/api/post/createPost', (req, res) => {
 		if (err) throw err;
 		const post = new Post({
 			title: req.body.title,
-			description: req.body.description
+			description: req.body.description,
+			date: req.body.date
 		})
 		post.save((err, doc) => {
 			if (err) throw err;
