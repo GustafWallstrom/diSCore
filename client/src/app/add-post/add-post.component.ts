@@ -20,13 +20,13 @@ export class AddPostComponent {
   }
 
   addPost() {
-  	if(this.post.title && this.post.description){
+  	if(this.post.title && this.post.description && /^\d+$/.test(this.post.description)){
   		this.addPostService.addPost(this.post).subscribe(res =>{
   			this.closeBtn.nativeElement.click();
         this.commonService.notifyPostAddition();
   		});
   	} else {
-  		alert('Enter course and number of strokes!');
+  		alert('Enter course and number of strokes!\nMake sure number of throws only contains digits.');
   	}
   }
 

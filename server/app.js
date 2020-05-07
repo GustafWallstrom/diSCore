@@ -13,6 +13,7 @@ app.use(bodyParser.urlencoded({
 }))
 
 app.post('/api/user/login', (req, res) => {
+
 	mongoose.connect(url, {
 		useNewUrlParser: true,
 		useUnifiedTopology: true,
@@ -24,6 +25,8 @@ app.post('/api/user/login', (req, res) => {
 		}, function (err, user) {
 			if (err) throw err;
 			if (user.length === 1) {
+				//let key = 'currentUser';
+				//localStorage.setItem(key, stringify(user.body.name));
 				return res.status(200).json({
 					status: 'success',
 					data: user
@@ -45,8 +48,7 @@ app.post('/api/user/create', (req, res) => {
 		const user = new User({
 			name: req.body.name,
 			username: req.body.username,
-			password: req.body.password,
-			date: req.body.date
+			password: req.body.password
 		})
 		user.save((err, res) => {
 			if (err) throw err;
@@ -66,6 +68,7 @@ app.post('/api/post/createPost', (req, res) => {
 		if (err) throw err;
 		const post = new Post({
 			title: req.body.title,
+			//title: localStorage.getItem(currentUser),
 			description: req.body.description,
 			date: req.body.date
 		})
