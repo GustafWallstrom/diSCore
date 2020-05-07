@@ -29,7 +29,7 @@ export class ShowPostComponent implements OnInit {
 
   getAllPost(){
   	this.showPostService.getAllPost().subscribe(result => {
-  		console.log('result is ', result);
+      console.log('result is ', result);
   		this.posts = result['data'];
   	});
   }

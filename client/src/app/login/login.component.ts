@@ -3,6 +3,7 @@ import { LoginService } from './login.service';
 import { User } from '../models/user.model';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -22,6 +23,7 @@ export class LoginComponent {
   		this.loginService.validateLogin(this.user).subscribe(result => {
         console.log('result is ', result);
         if(result['status'] === 'success') {
+          localStorage.setItem('currentUser', this.user.username);
           this.router.navigate(['/home']);
         } else {
           alert('Wrong username password');

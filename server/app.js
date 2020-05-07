@@ -25,8 +25,6 @@ app.post('/api/user/login', (req, res) => {
 		}, function (err, user) {
 			if (err) throw err;
 			if (user.length === 1) {
-				//let key = 'currentUser';
-				//localStorage.setItem(key, stringify(user.body.name));
 				return res.status(200).json({
 					status: 'success',
 					data: user
@@ -67,8 +65,8 @@ app.post('/api/post/createPost', (req, res) => {
 	}, function (err) {
 		if (err) throw err;
 		const post = new Post({
+			name: req.body.name,
 			title: req.body.title,
-			//title: localStorage.getItem(currentUser),
 			description: req.body.description,
 			date: req.body.date
 		})
@@ -87,7 +85,8 @@ app.post('/api/post/getPost', (req, res) => {
 		if (err) throw err;
 		const post = new Post({
 			title: req.body.title,
-			description: req.body.description
+			description: req.body.description,
+			name: req.body.name
 		})
 		post.save((err, res) => {
 			if (err) throw err;

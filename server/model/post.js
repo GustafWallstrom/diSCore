@@ -3,6 +3,10 @@ const Schema = mongoose.Schema;
 
 // create a schema
 const postSchema = new Schema({
+  name: {
+    type: String,
+    required: true
+  },
   title: {
     type: String,
     required: true

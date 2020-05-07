@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { User } from '../models/user.model';
-import { LOCAL_STORAGE, StorageService } from 'ngx-webstorage-service';
 
 @Injectable()
 export class LoginService {
@@ -13,7 +12,7 @@ export class LoginService {
 	validateLogin(user: User){
 		return this.http.post('/api/user/login',{
 			username : user.username,
-			password : user.password
+			password : user.password,
 		})
 	}
 
