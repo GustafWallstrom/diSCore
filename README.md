@@ -19,3 +19,7 @@ Technical Description:
 
 - Angular is used for front-end, client side.
 - Mongo DB is used for back-end, server side.
+
+Link for mid-term screencast:
+
+https://youtu.be/ddBd5uAk9jc
