@@ -1,4 +1,4 @@
-<div class="list-group">
+<div class="list-group" id="your-matches">
 
     <h5> {{getCurrUser()}}s matches </h5>
     <ng-container *ngIf="posts">
@@ -14,7 +14,7 @@
     </ng-container>
 </div>
 
-<div class="list-group">
+<div class="list-group" id="all matches">
 
         <h5>All matches</h5>
         <a *ngFor="let post of posts" href="#" class="list-group-item list-group-item-action flex-column align-items-start">

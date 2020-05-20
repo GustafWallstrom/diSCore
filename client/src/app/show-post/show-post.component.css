@@ -1,4 +1,14 @@
-.list-group{
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+@media (min-width: 1000px) {
+    #your-matches{
+        float: left;
+    }
+    
+    #all-matches{
+        float:right;
+    }
 }
+
+.list-group{
+    margin-right: 2rem;
+}
+
