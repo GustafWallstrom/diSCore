@@ -17,14 +17,22 @@ export class ShowPostComponent implements OnInit {
   	
   }
 
-  getCurrUser(){
+  hasPosts(){
+    if(this.posts){
+      for (let index = 0; index < this.posts.length; index++) {
+        const element = this.posts[index].name;
+        if(element == this.getCurrUser()) return true;
+      }
+      
+    return false;
+    }
+  }
 
+  getCurrUser(){
     return localStorage.getItem('currentUser');
   }
 
   ngOnInit(){
-    this.getCurrUser();
-    console.log('Current user is: ' + this.getCurrUser().toString());
     this.getAllPost();
 
     this.commonService.postAdded_Observable.subscribe(res => {
@@ -32,11 +40,9 @@ export class ShowPostComponent implements OnInit {
     });
   }
 
-
-
   getAllPost(){
   	this.showPostService.getAllPost().subscribe(result => {
-  		this.posts = result['data'];
+      this.posts = result['data'];
   	});
   }
 

@@ -1,30 +1,36 @@
-<div class="list-group" id="your-matches">
+<div class ="list-containder">
 
-    <h5> {{getCurrUser()}}s matches </h5>
-    <ng-container *ngIf="posts">
-        <a *ngFor="let post of posts" href="#" class="list-group-item list-group-item-action flex-column align-items-start"> 
+    <div class="list-group" id="your-matches">
+
+        <h5> {{getCurrUser()}}'s matches </h5>
+
+        <div *ngIf="!hasPosts()">Are you sure you have been throwing discs? We can't find any matches! :(</div>
+        <ng-container *ngFor="let post of posts; let i=index" class="your-list flex-column align-items-start">   
+            <div *ngIf="posts[i].name == getCurrUser()">
+                <div class="d-flex w-100 justify-content-between post-item">
+                        <h6 class="mb-1">Course: <span style="color:#850505">{{post.title}}</span></h6>
+                        <small>{{post.date}}</small>
+                </div>
+                <p class="mb-1">Number of throws: <span style="color:#850505">{{post.description}}</span></p>
+            </div>
+        </ng-container>
+
+
+    </div>
+
+    <div class="list-group" id="all-matches">
+
+            <h5>All matches</h5>
+
+            <a *ngFor="let post of posts" class="list-group-item flex-column align-items-start">
+                <h6>Player: <span style="color:#850505">{{post.name}}</span></h6>
                 <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">Course: <span style="color:#850505">{{post.title}}</span></h5>
+                    <h6 class="mb-1">Course: <span style="color:#850505">{{post.title}}</span></h6>
                     <small>{{post.date}}</small>
                 </div>
-                <p class="mb-1">Number of strokes: <span style="color:#850505">{{post.description}}</span></p>
-                
-                <small>Click for more details</small>
-        </a>
-    </ng-container>
-</div>
+                <p class="mb-1">Number of throws: <span style="color:#850505">{{post.description}}</span></p>
+            </a>
+        
+    </div>
 
-<div class="list-group" id="all matches">
-
-        <h5>All matches</h5>
-        <a *ngFor="let post of posts" href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-            <h6>Player : <span style="color:#850505">{{post.name}}</span></h6>
-            <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1">Course: <span style="color:#850505">{{post.title}}</span></h5>
-                <small>{{post.date}}</small>
-            </div>
-            <p class="mb-1">Number of strokes: <span style="color:#850505">{{post.description}}</span></p>
-            <small>Click for more details</small>
-        </a>
-       
 </div>
