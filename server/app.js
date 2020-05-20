@@ -106,7 +106,7 @@ app.post('/api/post/getAllPost', (req, res) => {
 		if (err) throw err;
 		Post.find({}, [], {
 			sort: {
-				_id: -1
+				date: -1
 			}
 		}, (err, doc) => {
 			if (err) throw err;

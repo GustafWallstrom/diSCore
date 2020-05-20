@@ -15,7 +15,7 @@ export class AddPostService {
 		var dd = String(today.getDate()).padStart(2, '0');
 		var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
 		var yyyy = today.getFullYear();
-		var todayString = String(dd + '-' + mm + '-' + yyyy);
+		var todayString = String(yyyy + '-' + mm + '-' + dd);
 		var currUser = localStorage.getItem('currentUser');
 
 		return this.http.post('/api/post/createPost',{

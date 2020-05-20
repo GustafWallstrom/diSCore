@@ -1,14 +1,33 @@
 @media (min-width: 1000px) {
     #your-matches{
+        width: 45%;
         float: left;
     }
     
     #all-matches{
-        float:right;
+        width: 45%;
+        float: right;
     }
 }
 
 .list-group{
-    margin-right: 2rem;
+    margin-top: 2rem;
 }
 
+.list-group-item{
+    max-width: 90%;
+    padding: 0.5rem;
+    border-top: 1px solid !important;
+    border-left: 0px;
+    border-right: 0px;
+}
+
+.your-list{
+    max-width: 90%;
+    padding: 0rem;
+}
+
+.post-item{
+    max-width: 90%;
+    border-top: 1px solid;
+}
