@@ -1,16 +1,15 @@
 <div class="list-group">
 
-    <h5> Your matches </h5>
+    <h5> {{getCurrUser()}}s matches </h5>
     <ng-container *ngIf="posts">
-        <a *ngFor="let post of posts" href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-            <ng-container *ngIf="post.name == 'Gustaf Wallström'">   
-            <div class="d-flex w-100 justify-content-between">
+        <a *ngFor="let post of posts" href="#" class="list-group-item list-group-item-action flex-column align-items-start"> 
+                <div class="d-flex w-100 justify-content-between">
                     <h5 class="mb-1">Course: <span style="color:#850505">{{post.title}}</span></h5>
                     <small>{{post.date}}</small>
                 </div>
                 <p class="mb-1">Number of strokes: <span style="color:#850505">{{post.description}}</span></p>
+                
                 <small>Click for more details</small>
-            </ng-container>
         </a>
     </ng-container>
 </div>

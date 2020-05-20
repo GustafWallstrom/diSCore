@@ -17,8 +17,15 @@ export class ShowPostComponent implements OnInit {
   	
   }
 
+  getCurrUser(){
+
+    return localStorage.getItem('currentUser');
+  }
+
   ngOnInit(){
-  	this.getAllPost();
+    this.getCurrUser();
+    console.log('Current user is: ' + this.getCurrUser().toString());
+    this.getAllPost();
 
     this.commonService.postAdded_Observable.subscribe(res => {
       this.getAllPost();
@@ -29,7 +36,6 @@ export class ShowPostComponent implements OnInit {
 
   getAllPost(){
   	this.showPostService.getAllPost().subscribe(result => {
-      console.log('result is ', result);
   		this.posts = result['data'];
   	});
   }
