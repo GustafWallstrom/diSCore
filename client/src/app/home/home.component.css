@@ -8,6 +8,7 @@
   padding-left: 1rem;
 }
 
+
 /* Custom page header */
 .header {
   padding-bottom: 1rem;
@@ -33,6 +34,11 @@
 @media (min-width: 48em) {
   .container {
     max-width: 46rem;
+  }
+
+  [role="main"]{
+  
+    height: 700px;
   }
 }
 .container-narrow > hr {
@@ -67,6 +73,11 @@
     padding-left: 0;
   }
 
+  [role="main"]{
+  
+    height: 700px;
+  }
+
   /* Space out the masthead */
   .header {
     margin-bottom: 2rem;
@@ -81,4 +92,6 @@
 .btn{
   text-decoration:none;
   cursor: pointer;
+  color: #850505;
+  border: #777;
 }

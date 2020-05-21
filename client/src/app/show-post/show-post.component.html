@@ -2,12 +2,13 @@
 
     <div class="list-group" id="your-matches">
 
-        <h5> {{getCurrUser()}}'s matches </h5>
+        <h5 class="title"> {{getCurrUser()}}'s matches </h5>
 
         <div *ngIf="!hasPosts()">Are you sure you have been throwing discs? We can't find any matches! :(</div>
+
         <ng-container *ngFor="let post of posts; let i=index" class="your-list flex-column align-items-start">   
-            <div *ngIf="posts[i].name == getCurrUser()">
-                <div class="d-flex w-100 justify-content-between post-item">
+            <div class="inner-div" *ngIf="posts[i].name == getCurrUser()">
+                <div class="d-flex w-100 justify-content-between">
                         <h6 class="mb-1">Course: <span style="color:#850505">{{post.title}}</span></h6>
                         <small>{{post.date}}</small>
                 </div>
@@ -20,15 +21,17 @@
 
     <div class="list-group" id="all-matches">
 
-            <h5>All matches</h5>
+            <h5 class="title">All matches</h5>
 
-            <a *ngFor="let post of posts" class="list-group-item flex-column align-items-start">
-                <h6>Player: <span style="color:#850505">{{post.name}}</span></h6>
-                <div class="d-flex w-100 justify-content-between">
-                    <h6 class="mb-1">Course: <span style="color:#850505">{{post.title}}</span></h6>
-                    <small>{{post.date}}</small>
+            <a *ngFor="let post of posts" class="all-list flex-column align-items-start">
+                <div class="inner-div">
+                    <h6>Player: <span style="color:#850505">{{post.name}}</span></h6>
+                    <div class="d-flex w-100 justify-content-between">
+                        <h6 class="mb-1">Course: <span style="color:#850505">{{post.title}}</span></h6>
+                        <small>{{post.date}}</small>
+                    </div>
+                    <p class="mb-1">Number of throws: <span style="color:#850505">{{post.description}}</span></p>
                 </div>
-                <p class="mb-1">Number of throws: <span style="color:#850505">{{post.description}}</span></p>
             </a>
         
     </div>
