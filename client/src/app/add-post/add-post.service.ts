@@ -26,4 +26,8 @@ export class AddPostService {
 		})
 	}
 
+	showCourses(){
+		return this.http.post('/api/post/getAllCourses',{});
+	}
+
 }

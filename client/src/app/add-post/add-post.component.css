@@ -1,0 +1,42 @@
+.btn {
+    background-color: #850505;
+    color: white;
+    box-shadow: none !important;
+    border: none;
+  } 
+  
+  .btn:hover {
+    color: #850505;
+    background-color: white;
+  }
+  
+  .btn:active {
+    background-color: white !important;
+  }
+
+  .btn-small{
+    background-color: #850505;
+    color: white;
+    box-shadow: none !important;
+    border: none;
+    padding: 0.3rem;
+    font-size: small;
+    margin-bottom: 1rem;
+  }
+
+  .form-group{
+    margin-top: 0.5rem;
+}
+
+.title-item {
+  font-style:oblique;
+  color: #850505;
+}
+
+.title-item:hover{
+  font-weight: 300 !important;
+}
+
+.course-list{
+  border-bottom: 1px solid !important;
+}
