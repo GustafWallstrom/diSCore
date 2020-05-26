@@ -1,43 +1,5 @@
-<div id="chart-match">
-    <dx-chart
-        palette="Violet"
-        [dataSource]="matchInfo">
-        <dxi-series
-            *ngFor="let match of matchInfo"
-            [valueField]="match.result"
-            [name]="match.coursename">
-        </dxi-series>
-        <dxo-common-series-settings #seriesSettings
-            argumentField="match"
-            [type]="types[0]">
-        </dxo-common-series-settings>
-        <dxo-margin [bottom]="20"></dxo-margin>
-        <dxo-argument-axis
-            [valueMarginsEnabled]="false"
-            discreteAxisDivisionMode="crossLabels">
-            <dxo-grid [visible]="true"></dxo-grid>
-        </dxo-argument-axis>
-        <dxo-legend
-            verticalAlignment="bottom"
-            horizontalAlignment="center"
-            itemTextPosition="bottom">
-        </dxo-legend>
-        <dxo-title
-            text="Result of matches">
-            <dxo-subtitle text="(+/- of courses par)">
-            </dxo-subtitle>
-        </dxo-title>
-        <dxo-export [enabled]="true"></dxo-export>
-        <dxo-tooltip [enabled]="true"></dxo-tooltip>
-    </dx-chart>
-    <div class="options">
-        <div class="caption">Options</div>
-        <div class="option">
-            <span>Series Type</span>
-            <dx-select-box
-                [dataSource]="types"
-                [(value)]="seriesSettings.type">
-            </dx-select-box>
-        </div>
-    </div>
+<div class="container">
+  <p>
+    graph works!
+  </p>
 </div>

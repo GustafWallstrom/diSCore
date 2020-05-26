@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Post } from '../models/post.model';
+import { Course } from '../models/course.model'
 
 @Injectable()
 export class AddPostService {
@@ -26,4 +27,13 @@ export class AddPostService {
 		})
 	}
 
+	showCourses(){
+		return this.http.post('/api/course/getAllCourses',{});
+	}
+
+	findCourse(courseName){
+		return this.http.post('/api/course/getCourse',{
+			name : courseName,
+		})
+	}
 }

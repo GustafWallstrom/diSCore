@@ -1,40 +1,15 @@
-import { NgModule, Component, enableProdMode } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import { DxChartModule, DxSelectBoxModule } from 'devextreme-angular';
-import { MatchInfo, Course, Service } from './graph.service';
-
-if(!/localhost/.test(document.location.host)) {
-    enableProdMode();
-}
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-    selector: 'demo-app',
-    templateUrl: 'graph/graph.component.html',
-    styleUrls: ['graph/graph.component.css'],
-    providers: [Service],
-    preserveWhitespaces: true
+  selector: 'app-graph',
+  templateUrl: './graph.component.html',
+  styleUrls: ['./graph.component.css']
 })
-export class GraphComponent {
-    types: string[] = ["line", "stackedline", "fullstackedline"];
-    courseinfo: Course[];
-    matchinfo: MatchInfo[];
+export class GraphComponent implements OnInit {
 
-    constructor(service: Service) {
-        this.courseinfo = service.getCourseInfo();
-        this.matchinfo = service.getMatchInfo();
-    }
+  constructor() { }
+
+  ngOnInit() {
+  }
+
 }
-
-@NgModule({
-    imports: [
-        BrowserModule,
-        DxChartModule,
-        DxSelectBoxModule
-    ],
-    declarations: [GraphComponent],
-    bootstrap: [GraphComponent]
-})
-export class GraphModule { }
-
-platformBrowserDynamic().bootstrapModule(GraphModule);

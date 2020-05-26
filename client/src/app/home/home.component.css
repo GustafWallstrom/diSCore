@@ -8,6 +8,7 @@
   padding-left: 1rem;
 }
 
+
 /* Custom page header */
 .header {
   padding-bottom: 1rem;
@@ -58,13 +59,18 @@
 }
 
 /* Responsive: Portrait tablets and up */
-@media screen and (min-width: 48em) {
+@media screen and (min-width: 1000px) {
   /* Remove the padding we set earlier */
   .header,
   .marketing,
   .footer {
     padding-right: 0;
     padding-left: 0;
+  }
+
+  [role="main"]{
+  
+    height: 700px;
   }
 
   /* Space out the masthead */
@@ -81,4 +87,7 @@
 .btn{
   text-decoration:none;
   cursor: pointer;
+  color: #850505;
+  border: #777;
 }
+

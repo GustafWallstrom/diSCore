@@ -6,6 +6,7 @@ const url = "mongodb+srv://gustaf:discorediscore@discore-w4mrp.mongodb.net/DiscG
 
 const User = require('./model/user');
 const Post = require('./model/post');
+const Course = require('./model/course');
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({
@@ -57,6 +58,72 @@ app.post('/api/user/create', (req, res) => {
 		})
 	});
 })
+
+app.post('/api/course/createCourse', (req, res) => {
+	mongoose.connect(url, function (err) {
+		if (err) throw err;
+		const user = new Course({
+			name: req.body.name,
+			location: req.body.location,
+			par: req.body.par
+		})
+		user.save((err, res) => {
+			if (err) throw err;
+			return res.status(200).json({
+				status: 'success',
+				data: res
+			})
+		})
+	});
+})
+
+app.post('/api/course/getAllCourses', (req, res) => {
+	mongoose.connect(url, {
+		useNewUrlParser: true,
+		useUnifiedTopology: true,
+	}, function (err) {
+		if (err) throw err;
+		Course.find({}, [], {
+			sort: {
+				name: 1
+			}
+		}, (err, doc) => {
+			if (err) throw err;
+			return res.status(200).json({
+				status: 'success',
+				data: doc
+			})
+		})
+	});
+})
+
+app.post('/api/course/getCourse', (req, res) => {
+	mongoose.connect(url, {
+		useNewUrlParser: true,
+		useUnifiedTopology: true,
+	}, function (err) {
+		if (err) throw err;
+		Course.find({
+			name: req.body.name,
+		}, (err, doc) => {
+			if (err) throw err;
+			if (doc.length === 1) {
+				return res.status(200).json({
+					status: 'success',
+					data: doc['0'].name
+				})
+			} else {
+				return res.status(200).json({
+					status: 'fail',
+					message: 'Course not in database'
+				})
+			}
+
+		})
+	});
+})
+
+
 
 app.post('/api/post/createPost', (req, res) => {
 	mongoose.connect(url, {

@@ -2,22 +2,35 @@
     #your-matches{
         width: 45%;
         float: left;
+        max-height: 380px;
+        overflow: auto;
     }
     
     #all-matches{
         width: 45%;
         float: right;
+        max-height: 680px;
+        overflow: auto;
+    }
+
+    .graph{
+        float: left;
     }
 }
 
-.list-group{
-    margin-top: 2rem;
+.graph{
+    position: relative;
+    top: auto;
 }
 
+.list-group{
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+
+
 .list-group-item{
-    max-width: 90%;
     padding: 0.5rem;
-    border-top: 1px solid !important;
     border-left: 0px;
     border-right: 0px;
 }
@@ -27,7 +40,24 @@
     padding: 0rem;
 }
 
-.post-item{
-    max-width: 90%;
-    border-top: 1px solid;
+.all-list{
+    padding: 0rem;
+}
+
+.inner-div{
+    border-bottom: 1px solid;
+    border-bottom-color: lightgrey;
+    margin-right: 0.5rem;
+    padding: 0.5rem;
+}
+
+.title{
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    background-color: white;
+    border-bottom: 1px solid;
+    border-bottom-color: #850505 ;
+    margin-bottom: 1rem;
+    z-index: 100;
 }

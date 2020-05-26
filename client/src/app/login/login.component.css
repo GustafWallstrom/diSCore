@@ -40,8 +40,12 @@
 .btn {
   background-color: #850505;
   color: white;
-  box-shadow: none !important;
+  border: none !important;
 } 
+
+.btn-primary{
+  border: none !important;
+}
 
 .btn:hover {
   color: #850505;
