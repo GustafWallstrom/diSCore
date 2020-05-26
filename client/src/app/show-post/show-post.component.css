@@ -12,6 +12,15 @@
         max-height: 680px;
         overflow: auto;
     }
+
+    .graph{
+        float: left;
+    }
+}
+
+.graph{
+    position: relative;
+    top: auto;
 }
 
 .list-group{
