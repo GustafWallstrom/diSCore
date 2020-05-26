@@ -59,7 +59,7 @@ app.post('/api/user/create', (req, res) => {
 	});
 })
 
-app.post('/api/user/createCourse', (req, res) => {
+app.post('/api/course/createCourse', (req, res) => {
 	mongoose.connect(url, function (err) {
 		if (err) throw err;
 		const user = new Course({
@@ -77,7 +77,7 @@ app.post('/api/user/createCourse', (req, res) => {
 	});
 })
 
-app.post('/api/post/getAllCourses', (req, res) => {
+app.post('/api/course/getAllCourses', (req, res) => {
 	mongoose.connect(url, {
 		useNewUrlParser: true,
 		useUnifiedTopology: true,
@@ -96,6 +96,33 @@ app.post('/api/post/getAllCourses', (req, res) => {
 		})
 	});
 })
+
+app.post('/api/course/getCourse', (req, res) => {
+	mongoose.connect(url, {
+		useNewUrlParser: true,
+		useUnifiedTopology: true,
+	}, function (err) {
+		if (err) throw err;
+		Course.find({
+			name: req.body.name,
+		}, (err, doc) => {
+			if (err) throw err;
+			if (doc.length === 1) {
+				return res.status(200).json({
+					status: 'success',
+					data: doc['0'].name
+				})
+			} else {
+				return res.status(200).json({
+					status: 'fail',
+					message: 'Course not in database'
+				})
+			}
+
+		})
+	});
+})
+
 
 
 app.post('/api/post/createPost', (req, res) => {

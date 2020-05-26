@@ -2,7 +2,7 @@ import { Component, ViewChild, ElementRef } from '@angular/core';
 import { AddPostService } from './add-post.service';
 import { Post } from '../models/post.model';
 import { Course } from '../models/course.model';
-import { Router } from '@angular/router';
+import { Router, convertToParamMap } from '@angular/router';
 import { CommonService } from '../service/common.service';
 
 @Component({
@@ -17,6 +17,7 @@ export class AddPostComponent {
   public post : Post;
   public courses: any [];
   public value: String;
+  public isThere: Boolean = false;
 
   constructor(private addPostService: AddPostService, private router: Router, private commonService: CommonService) {
   	this.post = new Post();
@@ -24,10 +25,14 @@ export class AddPostComponent {
 
   addPost() {
   	if(this.post.title && this.post.description && /^\d+$/.test(this.post.description)){
-  		this.addPostService.addPost(this.post).subscribe(res =>{
-  			this.closeBtn.nativeElement.click();
-        this.commonService.notifyPostAddition();
-  		});
+      if(this.isThere){
+        this.addPostService.addPost(this.post).subscribe(res =>{
+          this.closeBtn.nativeElement.click();
+          this.commonService.notifyPostAddition();
+        });
+      } else{
+        alert('The course is not in the database :(');
+      }     
   	} else {
   		alert('Enter course and number of strokes!\nMake sure number of throws only contains digits.');
   	}
@@ -35,17 +40,31 @@ export class AddPostComponent {
 
   ngOnInit(){
     this.showCourses();
+    this.courseExists()
   }
 
   fillTitle(name){
-    this.value = name;
+    //this.value = name;
+    this.post.title = name;
+  }
+
+  courseExists(){
+
+    this.addPostService.findCourse(this.post.title).subscribe(result => {      
+        if(result['data']){
+         this.isThere = true;
+        } else {
+          this.isThere = false;
+        }
+    }, error => {
+      console.log('error is ', error);
+    });
   }
 
   showCourses(){
     this.addPostService.showCourses().subscribe(result => {
     this.courses = result['data'];
-  });
-
+    });
   }
 
 }

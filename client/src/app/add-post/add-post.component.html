@@ -12,12 +12,12 @@
                 <form>
                     <p>Previously played courses: (click to add or write name)</p>
                     <ng-container *ngFor="let course of courses" class="course-list">
-                        <div class="title-item" (click)="fillTitle(course.name)" *ngIf="courses"> {{course.name}} i {{course.location}}, par: {{course.par}}</div>
+                        <div class="title-item" (click)="fillTitle(course.name); courseExists()" *ngIf="courses"> {{course.name}} i {{course.location}}, par: {{course.par}}</div>
                     </ng-container>
                     
                     <div class="form-group">
                         <label>Course name</label>
-                        <input name="title" id="title-input" type="text" [(ngModel)]="post.title" class="form-control" placeholder="Enter the name of the course" value="{{value}}">
+                        <input name="title" (keyup)="courseExists()" id="title-input" type="text" [(ngModel)]="post.title" class="form-control" placeholder="Enter the name of the course" value="{{value}}">
                     </div>
 
                     
@@ -26,9 +26,14 @@
                         <input name="description" type="number" [(ngModel)]="post.description" class="form-control" placeholder="Number of throws">
                     </div>
 
-                    <button (click)="addPost()" type="button" class="btn btn-primary">Add</button>
+                    <div *ngIf="isThere; else untrueButton">
+                        <button (click)="addPost()" type="button" class="btn btn-primary">Add</button>
+                    </div>
+                    <ng-template #untrueButton>
+                        <button style="background-color: grey;" type="button" class="btn btn-primary">Add</button> Course not in database
+                    </ng-template>
                 </form>
-                
+
             </div>
         </div>
     </div>
