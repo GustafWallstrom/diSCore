@@ -53,11 +53,11 @@ export class AddPostComponent {
   courseExists(){
 
     this.addPostService.findCourse(this.post.title).subscribe(result => {      
-        if(result['data']){
-         this.isThere = true;
-         this.coursePar = result['data'].par;
-        } else {
+      if(!result['data']){
           this.isThere = false;
+        } else {
+          this.isThere = true;
+          this.coursePar = result['data'].par;
         }
     }, error => {
       console.log('error is ', error);
