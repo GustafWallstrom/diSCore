@@ -55,6 +55,7 @@ export class GraphComponent implements OnInit {
 
     this.showPostService.loadPosts(this.currentUser).subscribe(result => {
 
+      this.result.length = 0;
       for (let index = 0; index < result['data'].length; index++) {
         this.result.push({"label": result['data'][index].date, "value":result['data'][index].par});
       }

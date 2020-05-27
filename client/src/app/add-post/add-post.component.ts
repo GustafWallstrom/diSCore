@@ -28,7 +28,6 @@ export class AddPostComponent {
   	if(this.post.title && this.post.description && /^\d+$/.test(this.post.description)){
       if(this.isThere){
         this.post.par = this.post.description - this.coursePar;
-        console.log(this.post.par);
         this.addPostService.addPost(this.post).subscribe(res =>{
           this.closeBtn.nativeElement.click();
           this.commonService.notifyPostAddition();
@@ -43,7 +42,7 @@ export class AddPostComponent {
 
   ngOnInit(){
     this.showCourses();
-    this.courseExists()
+    this.courseExists();
   }
 
   fillTitle(name){
