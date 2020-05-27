@@ -23,7 +23,8 @@ export class AddPostService {
 			name : currUser,
 			title : post.title,
 			description : post.description,
-			date: todayString
+			date: todayString,
+			par: post.par
 		})
 	}
 

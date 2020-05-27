@@ -18,6 +18,10 @@ const postSchema = new Schema({
   date: {
     type: String,
     required: true
+  },
+  par: {
+    type: String,
+    required: true
   }
 }, {
   collection: 'post',

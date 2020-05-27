@@ -1,19 +1,18 @@
-::ng-deep .options {
-    padding: 20px;
-    background-color: rgba(191, 191, 191, 0.15);
-    margin-top: 20px;
+.title{
+    top: 0;
+    border-bottom: 1px solid;
+    border-bottom-color: #850505 ;
+    margin-bottom: 1rem;
+    z-index: 100;
 }
-::ng-deep .option {
-    margin-top: 10px;
+
+@media (min-width: 1000px) {
+    .container{
+        width: 500px !important;
+    }
 }
-::ng-deep .caption {
-    font-size: 18px;
-    font-weight: 500;
-}
-::ng-deep .option > span {
-    margin-right: 10px;
-}
-::ng-deep .option > .dx-widget {
-    display: inline-block;
-    vertical-align: middle;
+
+.container{
+    width: auto;
+    padding: 0;
 }

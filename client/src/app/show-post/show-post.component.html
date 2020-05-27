@@ -12,7 +12,12 @@
                         <h6 class="mb-1">Course: <span style="color:#850505">{{post.title}}</span></h6>
                         <small>{{post.date}}</small>
                 </div>
-                <p class="mb-1">Number of throws: <span style="color:#850505">{{post.description}}</span></p>
+                <p class="mb-1">Score: <span style="color:#850505">{{post.description}} throws,
+                    <span *ngIf="(post.par < 0);">{{-post.par}} under par</span>
+                    <span *ngIf="(post.par > 0);">{{post.par}} over par</span>
+                    <span *ngIf="(post.par == 0);">PAR</span>
+                    </span>
+                </p>
             </div>
         </ng-container>
 
@@ -21,7 +26,7 @@
 
     <div class="list-group" id="all-matches">
 
-            <h5 class="title">All matches</h5>
+            <h5 class="title">All players matches</h5>
 
             <a *ngFor="let post of posts" class="all-list flex-column align-items-start">
                 <div class="inner-div">
@@ -30,7 +35,12 @@
                         <h6 class="mb-1">Course: <span style="color:#850505">{{post.title}}</span></h6>
                         <small>{{post.date}}</small>
                     </div>
-                    <p class="mb-1">Number of throws: <span style="color:#850505">{{post.description}}</span></p>
+                    <p class="mb-1">Score: <span style="color:#850505">{{post.description}} throws,
+                        <span *ngIf="(post.par < 0);">{{-post.par}} under par</span>
+                        <span *ngIf="(post.par > 0);">{{post.par}} over par</span>
+                        <span *ngIf="(post.par == 0);">PAR</span>
+                        </span>
+                    </p>
                 </div>
             </a>
         

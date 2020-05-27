@@ -18,6 +18,7 @@ export class AddPostComponent {
   public courses: any [];
   public value: String;
   public isThere: Boolean = false;
+  public coursePar: number;
 
   constructor(private addPostService: AddPostService, private router: Router, private commonService: CommonService) {
   	this.post = new Post();
@@ -26,6 +27,8 @@ export class AddPostComponent {
   addPost() {
   	if(this.post.title && this.post.description && /^\d+$/.test(this.post.description)){
       if(this.isThere){
+        this.post.par = this.post.description - this.coursePar;
+        console.log(this.post.par);
         this.addPostService.addPost(this.post).subscribe(res =>{
           this.closeBtn.nativeElement.click();
           this.commonService.notifyPostAddition();
@@ -44,7 +47,6 @@ export class AddPostComponent {
   }
 
   fillTitle(name){
-    //this.value = name;
     this.post.title = name;
   }
 
@@ -53,6 +55,7 @@ export class AddPostComponent {
     this.addPostService.findCourse(this.post.title).subscribe(result => {      
         if(result['data']){
          this.isThere = true;
+         this.coursePar = result['data'].par;
         } else {
           this.isThere = false;
         }

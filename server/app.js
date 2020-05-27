@@ -110,7 +110,7 @@ app.post('/api/course/getCourse', (req, res) => {
 			if (doc.length === 1) {
 				return res.status(200).json({
 					status: 'success',
-					data: doc['0'].name
+					data: doc['0']
 				})
 			} else {
 				return res.status(200).json({
@@ -135,7 +135,8 @@ app.post('/api/post/createPost', (req, res) => {
 			name: req.body.name,
 			title: req.body.title,
 			description: req.body.description,
-			date: req.body.date
+			date: req.body.date,
+			par: req.body.par
 		})
 		post.save((err, doc) => {
 			if (err) throw err;
@@ -174,6 +175,28 @@ app.post('/api/post/getAllPost', (req, res) => {
 		Post.find({}, [], {
 			sort: {
 				date: -1
+			}
+		}, (err, doc) => {
+			if (err) throw err;
+			return res.status(200).json({
+				status: 'success',
+				data: doc
+			})
+		})
+	});
+})
+
+app.post('/api/post/getYourPost', (req, res) => {
+	mongoose.connect(url, {
+		useNewUrlParser: true,
+		useUnifiedTopology: true,
+	}, function (err) {
+		if (err) throw err;
+		Post.find({
+			name: req.body.name,
+		}, [], {
+			sort: {
+				date: 1,
 			}
 		}, (err, doc) => {
 			if (err) throw err;

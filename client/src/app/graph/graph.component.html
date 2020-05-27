@@ -1,5 +1,9 @@
 <div class="container">
-  <p>
-    graph works!
-  </p>
+  <h5 class="title">
+    {{currentUser}}'s progress
+  </h5>
+  <fusioncharts
+      [chartConfig]=chartConfig
+      [dataSource]=dataSource >
+  </fusioncharts>
 </div>

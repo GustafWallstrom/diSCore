@@ -13,6 +13,13 @@ import { CommonService } from './service/common.service';
 import { GraphComponent } from './graph/graph.component';
 
 
+import { FusionChartsModule } from 'angular-fusioncharts';
+import * as FusionCharts from 'fusioncharts';
+import * as Charts from 'fusioncharts/fusioncharts.charts';
+import * as FusionTheme from 'fusioncharts/themes/fusioncharts.theme.fusion';
+
+FusionChartsModule.fcRoot(FusionCharts, Charts, FusionTheme)
+
 @NgModule({
   declarations: [
   	RootComponent,
@@ -26,7 +33,8 @@ import { GraphComponent } from './graph/graph.component';
     BrowserModule,
     ROUTING,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FusionChartsModule
   ],
   providers: [CommonService],
   bootstrap: [RootComponent]

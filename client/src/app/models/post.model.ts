@@ -5,10 +5,12 @@ export class Post {
 		this.title = '';
 		this.description = '';
 		this.date = '';
+		this.par = '';
 	}
 	public id;
 	public name;
 	public title;
 	public description;
 	public date;
+	public par;
 }
