@@ -8,12 +8,12 @@ Functional Description:
 
 This is a project in the course TDDD27 - Advanced Web Programming. It is a web application for keeping track of your score when playing disc golf.
 Basics:
-- You are able to create a user to save your scores (number of total strokes and the difference from the course´s par). 
-- Users can look at other users scores.
-- When playing you can either choose a pre-added course or add a new one (keeps track of par and number of holes).
+- You are able to save your scores to your user (number of total strokes and the difference from the course´s par). (DONE)
+- Users can look at other users scores. (DONE)
+- When playing you can either choose a pre-added course or add a new one (keeps track of par and number of holes). (only pre-added courses)
 Extendend goals if there´s time:
-- You can add another user while playing to add a match for them aswell.
-- Graphs to see the progression of your games.
+- You can add another user while playing to add a match for them aswell. (Was not implemented)
+- Graphs to see the progression of your games. (DONE)
 
 Technical Description:
 
@@ -23,3 +23,7 @@ Technical Description:
 Link for mid-term screencast:
 
 https://youtu.be/ddBd5uAk9jc
+
+Project done! 3.5 of 5 personal goals reached and a bunch of web-experience reached!
+
+Links to screencasts:
