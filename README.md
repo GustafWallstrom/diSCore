@@ -26,4 +26,6 @@ https://youtu.be/ddBd5uAk9jc
 
 Project done! 3.5 of 5 personal goals reached and a bunch of web-experience reached!
 
-Links to screencasts:
+Link to screencast with both application and code explanation:
+
+https://youtu.be/nxOE1CLS4lI
