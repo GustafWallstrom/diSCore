@@ -28,4 +28,4 @@ Project done! 3.5 of 5 personal goals reached and a bunch of web-experience reac
 
 Link to screencast with both application and code explanation:
 
-https://youtu.be/nxOE1CLS4lI
+https://youtu.be/azzHpnPMt60
